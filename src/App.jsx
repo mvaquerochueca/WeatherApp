@@ -25,6 +25,7 @@ export default function App() {
     condition: '',
     icon: '',
     conditionText: '',
+    temp_c: '',
   });
 
   const sendForm = async (e) => {
@@ -63,7 +64,9 @@ export default function App() {
       maxWidth='xs'
       sx={{
         mt: 2,
-        // backgroundColor: 'grey.400',
+        backgroundColor: 'grey.300',
+        borderRadius: '10px',
+        border: '1px solid grey',
       }}>
       <Typography variant='h3' component='h1' align='center' gutterBottom>
         Weather App
@@ -111,8 +114,13 @@ export default function App() {
             src={weather.icon}
             sx={{ margin: '0 auto' }}
           />
-          <Typography variant='h5' component='h3'>
-            {weather.temperature} °C
+          <Typography
+            variant='h5'
+            component='h3'
+            sx={{
+              color: 'black',
+            }}>
+            {weather.temp} °C
           </Typography>
           <Typography variant='h6' component='h4'>
             {weather.conditionText}
